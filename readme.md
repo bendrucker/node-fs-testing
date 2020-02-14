@@ -1,4 +1,4 @@
-# node-fs-testing
+# node-fs-testing ![tests](https://github.com/bendrucker/node-fs-testing/workflows/tests/badge.svg?branch=master)
 
 > An overview of common testing techniques in Node.js, applied to [`fs`](https://nodejs.org/api/fs.html)
 
