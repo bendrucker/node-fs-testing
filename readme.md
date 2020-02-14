@@ -28,7 +28,6 @@ A library like [Sinon](https://sinonjs.org) can help reduce the boilerplate invo
 Mutation is only possible with object types in JavaScript which are [passed by reference rather than by value](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0). If a dependent module exports a function directly, it is impossible to mutate the behavior of that function:
 
 ```js
-// a.js
 module.exports = function () {}
 ```
 
