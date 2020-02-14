@@ -7,7 +7,7 @@ const mockFs = require('mock-fs')
 const reverse = require('./')
 
 test('globally faking with mock-fs', async function (t) {
-  mockFs({'./foo': 'bar'})
+  mockFs({ './foo': 'bar' })
 
   t.equal(await reverse('./foo'), 'rab')
 

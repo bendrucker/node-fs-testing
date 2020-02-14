@@ -6,11 +6,10 @@ const proxyquire = require('proxyquire').noCallThru()
 
 test('replacing fs with proxyquire', async function (t) {
   const reverse = proxyquire('./', {
-    fs: Volume.fromJSON({'./foo': 'bar'})
+    fs: Volume.fromJSON({ './foo': 'bar' })
   })
 
   t.equal(await reverse('./foo'), 'rab')
 
   t.end()
 })
-
