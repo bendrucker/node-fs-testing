@@ -10,6 +10,8 @@ npm test
 
 ## Strategies
 
+Each strategy below is represented by real test files (`test-*.js`) that cover the same module ([`index.js`](index.js)). The module reads a file from the specified path and returns its content, reversed. Each test is functionally identical but is written with a different strategy or dependency. Many of the packages used in the tests are specific to `fs`. There are many alternatives for the packages used here. 
+
 ### Mutating Methods
 
 The most direct way to modify the behavior of the [system under test](http://xunitpatterns.com/SUT.html) is to mutate its dependencies and replace some of their methods with "stubs"—functions that returned pre-configured responses.
