@@ -96,7 +96,18 @@ Dependency injection inverts the `require` model—it prescribes passing objects
 
 #### Caveats
 
-Dependency injection, unlike the other strategies described above, requires rewriting your source code. Injection is more common in statically typed languages where mutating the methods of an object is not possible (e.g. Go, Java). Many Node.js projects make heavy use of `require` and switching entirely to dependency injection would be impractical. However, it is certainly possible to introduce dependency injection to certain modules to aid in testing while generally relying on `require`.
+Dependency injection, unlike the other strategies described above, requires rewriting your source code. Injection is more common in statically typed languages where mutating the methods of an object is not possible (e.g. Go, Java). Many Node.js projects make heavy use of `require` and switching entirely to dependency injection would be impractical. However, it is certainly possible to introduce dependency injection to certain modules to aid in testing while generally relying on `require`. If you configure classes with `options` objects, it is possible to introduce optional dependency injection with non-breaking source changes:
+
+```js
+class MyClass {
+  constructor (options = {}) {
+    this.fs = options.fs || require('fs')
+  }
+  write (path) {
+    this.fs.writeFile(path, '...')
+  }
+}
+```
 
 ## License
 
